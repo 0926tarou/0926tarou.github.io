@@ -3,9 +3,43 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>testcode</title>
+    <style>
+      div{
+        width:300px;
+        height:200px;
+        text-align:center;
+        background:green;
+      }
+      p{
+        color:blue;
+      }
+      button{
+        border-radius:25%;
+      }
+    </style>
+    <script>
+      var money = 0;
+      function insertMoney(){
+        money = money + 100;
+        alert('合計' + money + '円が自販機に入っています。');
+      }
+      function buyDrink(){
+        if(money<200){
+          alert('お金が' + (200 - money) + '円足りません。');
+        }else{
+          money = money - 200;
+          alert('飲み物を買えました。自販機に入っているお金の残金は' + money + '円です。');
+        }
+      }
+    </script>
   </head>
   <body>
-    <p>hello world.Aviutl</p>
+    <div>
+      <h1>Monster Drink BenderMaceac</h1>
+      <p>please in to the 100yen.<br>This Drink is 200yen.</p>
+      <button onclick='buyDrink()'>Buy<br>Drink</button>
+      <button onclick='insertMoney()'>Into<br>Money</button>
+    </div>
   </body>
 </html>
